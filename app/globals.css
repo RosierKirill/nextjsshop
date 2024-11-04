@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #1a193e;
+  --foreground: #1a193e;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #ffffff;
+    --foreground: #1a193e;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dark {
+  --background: #1a193e;
+  --foreground: #ffffff;
+}
+
+.dark body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+.dark .invert {
+  filter: invert(1);
+}
