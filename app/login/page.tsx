@@ -6,11 +6,26 @@ export default function LoginPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isDarkMode, setIsDarkMode] = useState(false);
+    const [message, setMessage] = useState('');
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-        console.log('Email:', email);
-        console.log('Password:', password);
+
+        const res = await fetch('/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+            setMessage('Login successful');
+        } else {
+            setMessage(data.error);
+        }
     };
 
     const toggleTheme = () => {
@@ -71,6 +86,7 @@ export default function LoginPage() {
                             Pas de compte?
                         </a>
                     </div>
+                    {message && <p className="mt-4 text-red-500">{message}</p>}
                     {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
                     <a
                         href="/"
