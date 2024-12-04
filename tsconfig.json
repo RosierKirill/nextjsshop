@@ -23,6 +23,7 @@
     },
 
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "pages/**/*.ts", "pages/**/*.tsx", "lib/**/*.ts", "**/*.js","lib/**/*.js"],
+
+  "exclude": ["./configs/base","node_modules","**/*.spec.ts"]
 }
