@@ -20,10 +20,8 @@
     ],
     "paths": {
       "@/*": ["./*"]
-    },
-
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "pages/**/*.ts", "pages/**/*.tsx", "lib/**/*.ts", "**/*.js","lib/**/*.js"],
-
-  "exclude": ["./configs/base","node_modules","**/*.spec.ts"]
+  "include": ["src/**/*", "next-env.d.ts"],
+  "exclude": ["configs/base", "node_modules", "**/*.spec.ts"]
 }
