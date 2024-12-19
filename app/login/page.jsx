@@ -8,7 +8,7 @@ export default function LoginPage() {
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [message, setMessage] = useState('');
 
-    const handleSubmit = async (e: { preventDefault: () => void; }) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const res = await fetch('/api/login', {
